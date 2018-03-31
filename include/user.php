@@ -201,6 +201,14 @@
 			$password = $user['password'];
 			$cpassword = $user['cpassword'];
 
+			$avator = $user['avator'];
+			$position = $user['position'];
+			$dob = $user['dob'];
+			$nrc = $user['nrc'];
+			$basic_salary = $user['basic_salary'];
+			$contract = $user['contract'];
+			$resign = $user['resign'];
+
 			$url = 'edit.php?id='.$id;
 
 			if($name == "" || $name == null)
@@ -279,6 +287,22 @@
 					{
 						$_SESSION['user_id'] = mysqli_insert_id($query);
 					}
+
+					$editsql = "SELECT * FROM user_infos WHERE user_id = '$id'";
+
+					$editquery = mysqli_query($con,$editsql);
+
+					$row = mysqli_num_rows($editquery);
+
+					if($row)
+					{
+						$upsql = "UPDATE user_infos SET position='$position',dob='$dob',nrc='$nrc',basic_salary='$basic_salary',contract_date='$contract',resign_date='$resign' WHERE user_id = '$id'";
+					}
+					else{
+						$upsql = "INSERT INTO user_infos(id,user_id,avator,position,nrc,dob,basic_salary,contract_date,resign_date) VALUES('','$id','','$position','$nrc','$dob','$basic_salary','$contract','$resign')";
+					}
+
+					$upquery = mysqli_query($con,$upsql);
 
 					header('location: list.php');
 				}
