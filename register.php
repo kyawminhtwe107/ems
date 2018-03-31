@@ -42,6 +42,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/register.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
 
   </head>
 
@@ -54,7 +55,6 @@
         <div class="container">
           <div class="col-md-offset-3 col-md-6 register-box">
             <h3 class="text-center">Register Form</h3>
-            <?php include('partials/status.php'); ?>
 
             <div class="col-md-12">
               <form action="" method="POST" class="form form-horizontal">
@@ -112,5 +112,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+
+    <?php include_once('partials/status.php'); ?>
   </body>
 </html>

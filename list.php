@@ -26,6 +26,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
 
   </head>
 
@@ -96,5 +97,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+
+    <?php include_once('partials/status.php'); ?>
   </body>
 </html>
